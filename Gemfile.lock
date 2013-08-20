@@ -1,0 +1,108 @@
+GIT
+  remote: git://github.com/hybridgroup/artoo-ardrone.git
+  revision: dad292ab95caea22a86f105f661da788f5f20094
+  specs:
+    artoo-ardrone (1.0.0)
+      artoo (~> 1.0.0.rc1)
+      hybridgroup-argus (~> 0.3.0)
+
+GIT
+  remote: git://github.com/hybridgroup/artoo-arduino.git
+  revision: 9d07087fffc259f8ef4466efc67b1a8f254b2ed7
+  specs:
+    artoo-arduino (1.0.0)
+      artoo (~> 1.0.0.rc1)
+      hybridgroup-firmata (~> 0.4.1)
+
+GIT
+  remote: git://github.com/hybridgroup/artoo-pebble.git
+  revision: 5b62c28ef3d4a1ecf8b4ab7145869108955c9c39
+  specs:
+    artoo-pebble (1.0.0)
+      artoo (~> 1.0.0)
+      hybridgroup-pebblewatch (~> 0.1.2)
+
+GIT
+  remote: git://github.com/hybridgroup/artoo-roomba.git
+  revision: 40ff6ec0ed0fbc839e053e9fc3f632aec645a7c3
+  specs:
+    artoo-roomba (1.0.0)
+      artoo (~> 1.0.0.rc1)
+
+GIT
+  remote: git://github.com/hybridgroup/artoo-sphero.git
+  revision: 573fd5476db8fde09a7d2343131049692d661c27
+  specs:
+    artoo-sphero (1.0.0)
+      artoo (~> 1.0.0)
+      sphero (~> 1.4.1)
+
+GIT
+  remote: git://github.com/hybridgroup/artoo.git
+  revision: fad67e7e3c28e2b2efd1138f71110ffdbeb17c7a
+  specs:
+    artoo (1.0.0)
+      celluloid (~> 0.14.1)
+      celluloid-io (~> 0.14.1)
+      multi_json (~> 1.6)
+      pry (~> 0.9)
+      rake (~> 10.0)
+      reel (~> 0.4.0.pre)
+      thor (~> 0.18.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    celluloid (0.14.1)
+      timers (>= 1.0.0)
+    celluloid-io (0.14.1)
+      celluloid (>= 0.14.1)
+      nio4r (>= 0.4.5)
+    certified (0.1.1)
+    coderay (1.0.9)
+    dotenv (0.8.0)
+    event_spitter (0.5.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    http (0.4.0)
+      certified
+      http_parser.rb
+    http_parser.rb (0.5.3)
+    hybridgroup-argus (0.3.0)
+    hybridgroup-firmata (0.4.1)
+      event_spitter
+    hybridgroup-pebblewatch (0.1.2)
+    method_source (0.8.2)
+    multi_json (1.7.9)
+    nio4r (0.5.0)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rake (10.1.0)
+    reel (0.4.0.pre)
+      celluloid-io (>= 0.8.0)
+      http (>= 0.2.0)
+      http_parser.rb (>= 0.5.3)
+      rack (>= 1.4.0)
+      websocket_parser (>= 0.1.2)
+    slop (3.4.6)
+    sphero (1.4.1)
+    thor (0.18.1)
+    timers (1.1.0)
+    websocket_parser (0.1.4)
+      http
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  artoo!
+  artoo-ardrone!
+  artoo-arduino!
+  artoo-pebble!
+  artoo-roomba!
+  artoo-sphero!
+  foreman

@@ -1,0 +1,71 @@
+=begin
+require 'artoo'
+
+connection :wedge_ardrone, :adaptor => :ardrone, :port => '192.168.0.43:5556'
+device :wedge, :driver => :ardrone, :connection => :wedge_ardrone
+
+connection :biggs_ardrone, :adaptor => :ardrone, :port => '192.168.0.44:5556'
+device :biggs, :driver => :ardrone, :connection => :biggs_ardrone
+
+work do
+  wedge.start
+  biggs.start
+
+  after(10.seconds){
+    wedge.take_off
+    biggs.take_off
+    wedge.hover
+    biggs.hover
+  }
+  after(15.seconds){
+    biggs.turn_right(0.3)
+    wedge.turn_right(0.3)
+  }
+  after(25.seconds){
+    biggs.hover
+    wedge.hover
+  }
+  after(30.seconds){
+    biggs.land
+    wedge.land
+  }
+end
+=end
+
+require 'artoo/robot'
+
+class DroneRobot < Artoo::Robot
+  connection :drone, :adaptor => :ardrone
+  device :drone, :driver => :ardrone
+
+  #api :host => '127.0.0.1', :port => '8080'
+
+  work do
+    drone.start
+
+    after(10.seconds){
+      drone.take_off
+      drone.hover
+    }
+    after(15.seconds){
+      drone.turn_right(0.3)
+    }
+    after(25.seconds){
+      drone.hover
+    }
+    after(30.seconds){
+      drone.land
+    }
+  end
+end
+
+DRONES = {"192.168.0.43:5556" => "wedge",
+           "192.168.0.44:5556" => "biggs"}
+robots = []
+DRONES.each_key {|p|
+  robots << DroneRobot.new(:connections =>
+                              {:drone =>
+                                {:port => p}})
+}
+
+DroneRobot.work!(robots)

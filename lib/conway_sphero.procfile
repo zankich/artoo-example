@@ -1,0 +1,11 @@
+#!/bin/bash
+Sphero-YGR: bash ../bin/sphero_linux_socat.sh 4560 Sphero-YGR
+Sphero-OPR: bash ../bin/sphero_linux_socat.sh 4561 Sphero-OPR
+Sphero-YGY: bash ../bin/sphero_linux_socat.sh 4562 Sphero-YGY
+Sphero-OOG: bash ../bin/sphero_linux_socat.sh 4563 Sphero-OOG
+Sphero-YRR: bash ../bin/sphero_linux_socat.sh 4564 Sphero-YRR
+Sphero-PYO: bash ../bin/sphero_linux_socat.sh 4565 Sphero-PYO
+Sphero-RRG: bash ../bin/sphero_linux_socat.sh 4566 Sphero-RRG
+Sphero-BWY: bash ../bin/sphero_linux_socat.sh 4567 Sphero-BWY
+Sphero-WWW: bash ../bin/sphero_linux_socat.sh 4568 Sphero-WWW
+Sphero-PYG: bash ../bin/sphero_linux_socat.sh 4569 Sphero-PYG

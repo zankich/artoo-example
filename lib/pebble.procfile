@@ -1,0 +1,3 @@
+pebble: artoo connect socat 4567 pebble --retries=3
+sphero: artoo connect socat 4568 Sphero-YGY --retries=3
+robot: artoo start pebble_sphero.rb --delay=15
