@@ -1,1 +1,3 @@
+#rvm use --create jruby-1.7.4@artoo-example
 rvm use --create rbx@artoo-example
+#rvm use --create 2.0.0@artoo-example
