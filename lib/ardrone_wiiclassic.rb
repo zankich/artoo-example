@@ -1,6 +1,11 @@
 require 'artoo'
 
-#connection :ardrone, :adaptor => :ardrone, :port => '192.168.0.43:5556'
+connection :capture, :adaptor => :opencv_capture, :source => "tcp://192.168.1.1:5555"
+device :capture, :driver => :opencv_capture, :connection => :capture, :interval => 0.0033
+
+connection :video, :adaptor => :opencv_window, :title => "Video"
+device :video, :driver => :opencv_window, :connection => :video, :interval => 0.0033
+
 connection :ardrone, :adaptor => :ardrone, :port => '192.168.1.1:5556'
 device :drone, :driver => :ardrone, :connection => :ardrone
 
@@ -17,6 +22,14 @@ OFFSETS = {
 @toggle_camera = 0
 
 work do
+  on capture, :frame => proc { |*value|
+    begin
+      video.image = value[1].image
+    rescue Exception => e
+      puts e.message
+    end
+  }
+
   on classic, :a_button => proc { drone.take_off }
   on classic, :b_button => proc { drone.hover }
   on classic, :x_button => proc { drone.land }

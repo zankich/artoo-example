@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/hybridgroup/artoo-ardrone.git
+  revision: 96bff5bf49442c8db450d9ed76aa8ad4c9ec16e4
+  specs:
+    artoo-ardrone (1.0.4)
+      argus (~> 0.4.0)
+      artoo (~> 1.2.1)
+
+GIT
   remote: git://github.com/hybridgroup/artoo-arduino.git
   revision: 4c981023ae7bf9f5f9ff97a3f925a05fa2c38f20
   specs:
@@ -35,7 +43,7 @@ GIT
 
 GIT
   remote: git://github.com/hybridgroup/artoo-opencv.git
-  revision: 2c49141205f9aba1701a2c3b59526d08c0f8c86c
+  revision: 35764948264d0d77ed5c0aed6be3483f763fc736
   specs:
     artoo-opencv (0.0.1)
       artoo (~> 1.2.0)
@@ -45,6 +53,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.5)
+    argus (0.4.0)
     artoo (1.2.1)
       celluloid (~> 0.15.0)
       celluloid-io (~> 0.15.0)
@@ -152,6 +161,7 @@ PLATFORMS
 
 DEPENDENCIES
   artoo
+  artoo-ardrone!
   artoo-arduino!
   artoo-digispark!
   artoo-i2c!

@@ -11,18 +11,32 @@ device :drone, :driver => :ardrone, :connection => :ardrone
 
 HAAR = "#{Dir.pwd}/lib/haarcascade_frontalface_alt.xml"
 
+
 work do
+  on capture, :frame => :on_image
   drone.start
   drone.take_off
+  after(8.second) { drone.up(0.5) }
   after(10.seconds) { drone.hover }
-  after(15.seconds) {
+  after(13.seconds) {
     every(0.5) {
+      @detect_on = true
       opencv = capture.opencv
       video.image = opencv.image
       detect(opencv)
     }
-  after(60.seconds{ drone.land }
+    after(30.seconds){ drone.land }
   }
+end
+
+def on_image(*value)
+  if !detect_on
+    video.image = value[1].image
+  end
+end
+
+def detect_on
+  @detect_on = (@detect_on.nil? ? false : true)
 end
 
 def detect(opencv)

@@ -14,8 +14,8 @@ device :blue, :driver => :led, :pin => 2
 work do
   turn_on(blue)
  
-  repo_name = 'hybridgroup/artoo'
-  #repo_name = 'rails/rails'
+  repo_name = 'hybridgroup/broken-arrow'
+  #repo_name = 'hybridgroup/artoo'
   puts "Connecting to repo: #{repo_name}"
   @repo = Travis::Repository.find(repo_name)
  
